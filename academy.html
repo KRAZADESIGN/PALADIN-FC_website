@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>騎士運動學院 | Apex Football Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brighton: {
+                            blue: '#0057B8',
+                            darkblue: '#003B7A',
+                            navy: '#0A192F',
+                            yellow: '#FFC72C',
+                            gold: '#E0A800',
+                            light: '#F4F7FA',
+                            pink: '#FF66CC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(184, 140, 171, 0.25);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 35px rgba(242, 173, 219, 0.45);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #fdf2f8 0%, #ffa0dc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(10, 15, 29, 0.75) 0%, rgba(10, 15, 29, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body id="academy" class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
+
+    <header class="fixed top-0 left-0 w-full z-50  backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="paladin.html" class="flex items-center gap-3 group">
+                <div href="paladin.html" class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-accent flex items-center justify-center text-brand-dark text-xl font-black  transform group-hover:rotate-6 transition-transform">
+                    <img src="paladin logo.png" alt="聖騎士足球俱樂部隊徽" class="w-full h-full object-contain">
+                    
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-wider text-white">PALADIN FC <span class="text-brand-accent"></span></span>
+                    <span class="text-xs text-slate-400 font-medium tracking-widest -mt-1">騎士運動學院</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+                <a href="#about" class="hover:text-brand-accent transition-colors">俱樂部特色</a>
+                <a href="#courses" class="hover:text-brand-accent transition-colors">年齡分級</a>
+                <a href="#campuses-courses" class="hover:text-brand-accent transition-colors">訓練課程資訊</a>
+                <a href="#achievements" class="hover:text-brand-accent transition-colors">學員好評</a>
+                <a href="#faq" class="hover:text-brand-accent transition-colors">常見問題</a>
+            </nav>
+
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-brand-accent">俱樂部特色</a>
+            <a href="#courses" class="block py-2 text-slate-300 hover:text-brand-accent">訓練課程</a>
+            <a href="#coaches" class="block py-2 text-slate-300 hover:text-brand-accent">教練團隊</a>
+            <a href="#achievements" class="block py-2 text-slate-300 hover:text-brand-accent">學員好評</a>
+            <a href="#faq" class="block py-2 text-slate-300 hover:text-brand-accent">常見問題</a>
+            <a href="#booking" class="block w-full text-center bg-brand-accent text-brand-dark font-bold py-3 rounded-xl mt-4">
+                預約免費體驗
+            </a>
+        </div>
+    </header>
+
+   <section class="hero-bg min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden bg-brighton-pink">
+    <!-- 1. 本機背景圖片 -->
+    <img src="background 2.jpg" 
+         alt="主場背景" 
+         class="absolute inset-0 w-full h-full object-cover object-center">
+    
+    <!-- 2. 半透明黑色遮罩（提高文字可讀性） -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- 3. Ambient Light Accents (氛圍光暈) -->
+    <div class="absolute top-1/4 left-10 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- 4. 主要內容容器 -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- 左側：文字與按鈕區塊 -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                
+                <!-- 招生標籤 -->
+                <div class="inline-flex items-center gap-2 bg-brand-card/80 border border-brand-accent/30 text-brand-accent px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+                    U12菁英隊熱烈招生中！
+                </div>
+
+                <!-- 大標題 -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight text-white">
+                    燃燒足球夢想<br>
+                    從<span class="text-gradient">騎士運動學院</span>開始！
+                </h1>
+
+                <!-- 描述內文 -->
+                <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    專業&科學的教學體系，結合適齡專屬球場與專業運動防護。讓孩子在樂趣中建立自信、強健體魄、培養團隊榮譽感！
+                </p>
+
+                <!-- CTA 按鈕群 -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#booking" class="w-full sm:w-auto bg-gradient-to-r from-brand-primary to-brand-accent text-brand-dark text-lg font-bold px-8 py-4 rounded-full glow-effect transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-calendar-check text-brand-dark"></i> 
+                        <span>立即預約 1 堂免費體驗</span>
+                    </a>
+                    
+                    <a href="#courses" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-700 text-lg font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                        <span>瀏覽課程分類</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Highlight Badges (數據指標) -->
+                <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-white">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-400">專業持證教練</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-white">170+</div>
+                        <div class="text-xs sm:text-sm text-slate-400">累計學員人數</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-white">98.5%</div>
+                        <div class="text-xs sm:text-sm text-slate-400">家長好評推薦</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 右側：主視覺卡片區塊 -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <!-- 發光底框效果 -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-primary to-brand-accent rounded-3xl blur opacity-30"></div>
+                    
+                    <!-- 卡片本體 -->
+                    <div class="relative rounded-2xl overflow-hidden bg-brand-card border border-slate-700/50 shadow-2xl">
+                        <img src="taining pic 1.jpg" 
+                             alt="足球訓練" 
+                             class="w-full h-[420px] object-cover">
+                        
+                        <!-- 卡片下方覆蓋內容（含背景底圖） -->
+<div class="relative overflow-hidden rounded-b-2xl border-t border-slate-700/50">
+    
+    <!-- 1. 區塊專屬背景底圖 -->
+    <img src="background.jpg" 
+         alt="訓練場地底圖" 
+         class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
+
+    <!-- 2. 暗色漸層遮罩（防止背景圖干擾文字閱讀） -->
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/85 to-brand-card/40 backdrop-blur-[2px]"></div>
+
+    <!-- 3. 上層文字與資訊內容 -->
+    <div class="relative z-10 p-6 space-y-2">
+        <div class="flex items-center gap-3 mb-1">
+            <span class="bg-brand-orange text-brighton-pink text-xs font-bold px-2.5 py-1 rounded shadow-md">
+                試聽亮點
+            </span>
+            <span class="text-xs text-slate-200 font-medium drop-shadow">
+                完全免費 · 現場提供球具
+            </span>
+        </div>
+
+        <p class=" font-bold text-lg drop-shadow-md">
+            聖騎士足球試聽課
+        </p>
+        
+        <p class=" text-sm leading-relaxed drop-shadow text-white">
+            體驗專業教練現場評估與熱情教學風格！
+        </p>
+
+        <!-- 地點/地址微標籤 (選填) -->
+        <div class="pt-2 flex items-center gap-2 text-xs text-brand-accent">
+            <i class="text-white fa-solid fa-location-dot"></i>
+            <span>高雄市立七賢國小 / 高雄市立永清國小</span>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="about" class="py-24 bg-brand-navy relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brighton-pink text-xs font-bold tracking-widest text-brand-accent uppercase mb-3">Why Choose Us</h2>
+                <p class="text-brighton-navy text-3xl sm:text-4xl font-extrabold ">為什麼選擇聖騎士足球學院？</p>
+                <p class="text-brighton-navy mt-4">我們不只教球技，更著重於學員的品格塑造、團隊精神與體能均衡發展。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                        <i class="text-slate-400 fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brighton-pink mb-3">持證專業教練</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                       教練持有 CTFA教練證照，具備豐富的兒童與青年培訓經驗。
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                        <i class="fa-solid text-slate-400 fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brighton-pink mb-3">多個訓練時段</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        每週 2+ 時段任選！配合孩子的行程，足球訓練不再撞期，平日課後放電、週末陽光特訓  打造全家人最舒服的運動行事曆。
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                        <i class="text-slate-400 fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold  mb-3 text-brighton-pink">分齡分級系統</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        針對幼稚園至成人的不同年齡階段，加以分類，讓每位學員得到最適合的訓練資源。
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                        <i class="fa-solid fa-trophy text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brighton-pink mb-3">豐富賽事經驗</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        定期舉辦友誼賽、參加聯賽，實戰檢驗學習成果，培養勝不驕敗不餒的運動家精神。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brighton-pink text-xs font-bold tracking-widest text-brand-accent uppercase mb-3">Training Programs</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-brighton-navy">專業足球訓練課程</p>
+                <p class="text-slate-400 mt-4">從樂趣啟蒙到菁英梯隊，我們提供全方位適齡成長階梯</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Course Card 1 -->
+                <div class="bg-brand-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col hover:border-brand-primary/50 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=600&auto=format&fit=crop" alt="幼兒啟蒙班" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-primary text-brand-dark font-extrabold text-xs px-3 py-1 rounded-full">U5 - U8</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-brighton-navy mb-2">幼兒啟蒙興趣班</h3>
+                            <p class="text-slate-400 text-xs mb-4">透過趣味足球遊戲，引導體能協調性、反應力發展，養成團隊運動興趣。</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="bg-brand-card rounded-2xl border border-brand-accent/40 overflow-hidden flex flex-col hover:border-brand-accent transition-all relative group shadow-lg">
+                    <div class="absolute top-3 right-3 z-10 bg-brand-orange text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full">最受歡迎</div>
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&auto=format&fit=crop" alt="青少年進階班" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-extrabold text-xs px-3 py-1 rounded-full">U9 - U14</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-brighton-navy mb-2">青少年技術進階班</h3>
+                            <p class="text-slate-400 text-xs mb-4">精雕雙腳控球、傳接球精度與小組配合戰術，建立良好的運動體能基礎。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="bg-brand-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col hover:border-brand-primary/50 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?q=80&w=600&auto=format&fit=crop" alt="精英梯隊班" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-yellow text-brand-dark font-extrabold text-xs px-3 py-1 rounded-full">U15 - U18</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-brighton-navy mb-2">精英梯隊</h3>
+                            <p class="text-slate-400 text-xs mb-4">高強度實戰對抗、職業級全場戰術運用、專屬高階體能與運動心理輔導。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4 -->
+                <div class="bg-brand-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col hover:border-brand-primary/50 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=600&auto=format&fit=crop" alt="成人休閒進階班" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-blue-500 text-white font-extrabold text-xs px-3 py-1 rounded-full">成人班</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-brighton-navy mb-2">成人休閒與進階班</h3>
+                            <p class="text-slate-400 text-xs mb-4">下班後釋放壓力！包含技術強化、分組對抗賽，兼顧流汗健身與社交樂趣。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 雙校區課程與時段介紹區塊 -->
+<section id="campuses-courses" class="py-20  text-white relative overflow-hidden bg-brighton-light">
+    <!-- 背景氛圍裝飾 -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- 區塊標題 -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-slate-400 inline-block bg-brand-primary/20 text-brand-primary border border-brand-primary/30 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                Campus & Schedule
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black text-brighton-pink mt-4 tracking-tight">
+                雙校區專屬訓練課程
+            </h2>
+            <p class="text-slate-400 text-base sm:text-lg mt-3">
+                提供永清國小與七賢國小兩大基地，彈性選擇、方便排課！
+            </p>
+        </div>
+
+        <!-- 校區卡片對照 (Grid) -->
+        <div class="grid lg:grid-cols-2 gap-10">
+
+            <!-- 1. 永清國小校區 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-brand-primary/50 transition-all duration-300">
+                <div>
+                    <!-- 校區照片展示區 (大圖 + 輪播相簿) -->
+                    <div class="relative group h-64 sm:h-72 overflow-hidden bg-slate-800">
+                        <img id="yongqing-main-img" 
+                             src="yongqing-field.jpg" 
+                             alt="永清國小足球場" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=800&auto=format&fit=crop'">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        
+                        <!-- 校區標籤 -->
+                        <div class="absolute top-4 left-4 bg-brand-primary text-brand-dark font-black text-xs px-3 py-1.5 rounded-full shadow-lg">
+                            寬敞天然大草皮
+                        </div>
+                        
+                        <!-- 照片上方校區名稱 -->
+                        <div class="absolute bottom-4 left-6">
+                            <h3 class="text-2xl font-black text-white">永清國小校區</h3>
+                            <p class="text-xs text-slate-300 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-brand-primary"></i> 高雄市左營區左營大路 2-2 號
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 相簿縮圖區 (點擊可切換大圖) -->
+                    <div class="p-4 bg-slate-950/60 border-b border-slate-800 flex gap-2 overflow-x-auto">
+                        <img src="yongqing-1.jpg" alt="訓練照片1" class="w-16 h-12 object-cover rounded-lg border border-brand-primary/50 cursor-pointer hover:opacity-80 transition" onclick="document.getElementById('yongqing-main-img').src=this.src" onerror="this.src='https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=200&auto=format&fit=crop'">
+                        <img src="yongqing-2.jpg" alt="訓練照片2" class="w-16 h-12 object-cover rounded-lg border border-slate-700 cursor-pointer hover:opacity-80 transition" onclick="document.getElementById('yongqing-main-img').src=this.src" onerror="this.src='https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=200&auto=format&fit=crop'">
+                        <img src="yongqing-3.jpg" alt="訓練照片3" class="w-16 h-12 object-cover rounded-lg border border-slate-700 cursor-pointer hover:opacity-80 transition" onclick="document.getElementById('yongqing-main-img').src=this.src" onerror="this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=200&auto=format&fit=crop'">
+                    </div>
+
+                    <!-- 訓練時段詳情 -->
+                    <div class="p-6 sm:p-8 space-y-6">
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-clock"></i> 專屬訓練時段
+                            </h4>
+                            
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/80 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold text-white text-sm">週日 下午訓練班</div>
+                                        <div class="text-xs text-slate-400 mt-0.5">適合對象：全年齡</div>
+                                    </div>
+                                    <span class="bg-brand-primary/20 text-brand-primary font-mono text-xs px-2.5 py-1 rounded-md font-bold shrink-0">
+                                        16:00 - 18:30
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 課程重點特色 -->
+                        <div class="pt-4 border-t border-slate-800">
+                            <div class="text-xs font-bold text-slate-400 mb-2">校區特色與重點：</div>
+                            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                                <li>草地視野開闊，利於進行大場地空間觀念與長傳訓練。</li>
+                                <li>設有家長休息觀賽區與停車空間，接送十分便利。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- 2. 七賢國小校區 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-brand-accent/50 transition-all duration-300">
+                <div>
+                    <!-- 校區照片展示區 (大圖 + 輪播相簿) -->
+                    <div class="relative group h-64 sm:h-72 overflow-hidden bg-slate-800">
+                        <img id="qixian-main-img" 
+                             src="qixian-field.jpg" 
+                             alt="七賢國小足球場" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800&auto=format&fit=crop'">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        
+                        <!-- 校區標籤 -->
+                        <div class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-black text-xs px-3 py-1.5 rounded-full shadow-lg">
+                            專業燈光平整球場
+                        </div>
+                        
+                        <!-- 照片上方校區名稱 -->
+                        <div class="absolute bottom-4 left-6">
+                            <h3 class="text-2xl font-black text-white">七賢國小校區</h3>
+                            <p class="text-xs text-slate-300 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-brand-accent"></i> 高雄市新興區中正三路 116 號
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 相簿縮圖區 (點擊可切換大圖) -->
+                    <div class="p-4 bg-slate-950/60 border-b border-slate-800 flex gap-2 overflow-x-auto">
+                        <img src="qixian-1.jpg" alt="訓練照片1" class="w-16 h-12 object-cover rounded-lg border border-brand-accent/50 cursor-pointer hover:opacity-80 transition" onclick="document.getElementById('qixian-main-img').src=this.src" onerror="this.src='https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop'">
+                        <img src="qixian-2.jpg" alt="訓練照片2" class="w-16 h-12 object-cover rounded-lg border border-slate-700 cursor-pointer hover:opacity-80 transition" onclick="document.getElementById('qixian-main-img').src=this.src" onerror="this.src='https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=200&auto=format&fit=crop'">
+                        <img src="qixian-3.jpg" alt="訓練照片3" class="w-16 h-12 object-cover rounded-lg border border-slate-700 cursor-pointer hover:opacity-80 transition" onclick="document.getElementById('qixian-main-img').src=this.src" onerror="this.src='https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=200&auto=format&fit=crop'">
+                    </div>
+
+                    <!-- 訓練時段詳情 -->
+                    <div class="p-6 sm:p-8 space-y-6">
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-clock"></i> 專屬訓練時段
+                            </h4>
+                            
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/80 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold text-white text-sm">週六 晚間訓練班</div>
+                                        <div class="text-xs text-slate-400 mt-0.5">適合對象：全年齡</div>
+                                    </div>
+                                    <span class="bg-brand-accent/20 text-brand-accent font-mono text-xs px-2.5 py-1 rounded-md font-bold shrink-0">
+                                        19:00 - 21:30
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 課程重點特色 -->
+                        <div class="pt-4 border-t border-slate-800">
+                            <div class="text-xs font-bold text-slate-400 mb-2">校區特色與重點：</div>
+                            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                                <li>市中心精華地段，捷運站步行 3 分鐘即可抵達。</li>
+                                <li>配備夜間高空照明系統，星光班體感涼爽不曝曬。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <footer class="bg-brand-navy border-t border-slate-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Logo & About -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-accent flex items-center justify-center text-brand-dark text-lg font-black">
+                            <i class="fa-solid fa-futbol text-brighton-pink"></i>
+                        </div>
+                        <span class="text-xl font-black text-brighton-pink">PALADIN <span class="text-brand-accent">FC</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        聖騎士足球學院致力於打造全台灣最專業、最安全的青少年足球培訓基地。激發潛能，熱血奔跑！
+                    </p>
+                    <div class="flex gap-3 text-slate-400">
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-accent hover:bg-slate-800 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-accent hover:bg-slate-800 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-accent hover:bg-slate-800 transition-colors"><i class="fa-brands fa-line"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-card flex items-center justify-center hover:text-brand-accent hover:bg-slate-800 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-brighton-pink font-bold text-sm mb-4 border-l-2 border-brand-accent pl-2">快速連結</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="paladin.html" class="hover:text-brand-accent transition-colors">關於聖騎士俱樂部</a></li>
+                        <li><a href="#courses" class="hover:text-brand-accent transition-colors">最新課程大綱</a></li>
+                        <li><a href="#booking" class="hover:text-brand-accent transition-colors">預約體驗課</a></li>
+                    </ul>
+                </div>
+
+
+                
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 PALADIN Football Academy. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">隱私權政策</a>
+                    <a href="#" class="hover:text-slate-400">服務條款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Auto close mobile menu when link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FAQ Toggle Accordion
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(`${id}-icon`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Quick select course from course cards
+        function selectCourse(courseName) {
+            const selectElement = document.getElementById('course-select');
+            if (selectElement) {
+                selectElement.value = courseName;
+            }
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            // Extract Form Values
+            const name = document.getElementById('student-name').value;
+            const course = document.getElementById('course-select').value;
+            const date = document.getElementById('preferred-date').value;
+
+            // Fill Modal
+            document.getElementById('modal-student-name').textContent = name;
+            document.getElementById('modal-course').textContent = course;
+            document.getElementById('modal-date').textContent = date;
+
+            // Show Modal
+            document.getElementById('success-modal').classList.remove('hidden');
+
+            // Reset Form
+            document.getElementById('trial-form').reset();
+        }
+
+        // Close Modal Handler
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
