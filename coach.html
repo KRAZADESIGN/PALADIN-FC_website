@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖騎士足球俱樂部官方網站 | PALADIN FC</title>
+    <!-- 🌟 設定瀏覽器分頁標誌 (Favicon) 🌟 -->
+    <link rel="icon" type="image/png" href="paladin logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brighton: {
+                            blue: '#0057B8',
+                            darkblue: '#003B7A',
+                            navy: '#0A192F',
+                            yellow: '#FFC72C',
+                            gold: '#E0A800',
+                            light: '#F4F7FA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 87, 184, 0.5);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 87, 184, 0.9) 0%, rgba(10, 25, 47, 0.95) 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brighton-yellow/95 dark:bg-brighton-navy/95 backdrop-blur-md text-white shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-12 h-12 rounded-full dark:bg-brighton-navy/95 flex items-center justify-center">
+                        <img src="paladin logo.png" alt="聖騎士足球俱樂部隊徽" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-wider block leading-tight">聖騎士足球俱樂部</span>
+                        <span class="text-xs font-medium uppercase tracking-widest">PALADIN FC</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="index.html" class="hover:text-brighton-blue transition-colors py-2">俱樂部簡介</a>
+                    <a href="index.html" class="hover:text-brighton-blue transition-colors py-2">參賽記錄</a>
+                    <a href="academy.html" class="hover:text-brighton-blue transition-colors py-2">班級介紹</a>
+                    <a href="coach.html" class="hover:text-brighton-blue transition-colors py-2">教練介紹</a> 
+                    <a href="#contact" class="hover:text-brighton-blue transition-colors py-2">聯絡我們</a>
+                </nav>
+
+                <!-- Tools -->
+                <div class="flex items-center space-x-4">
+                    <a href="#matches" class="hidden sm:inline-flex items-center px-4 py-2 bg-brighton-yellow text-brighton-navy hover:bg-yellow-400 font-bold text-sm rounded-full shadow-md transition-all transform hover:scale-105">
+                        <i class="fas fa-ticket-alt mr-2"></i>賽程
+                    </a>
+                    <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md hover:bg-white/10 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brighton-yellow dark:bg-slate-900 border-t border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">俱樂部簡介</a>
+            <a href="#record.html" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">參賽紀錄</a>
+            <a href="academy.html" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">班級介紹</a>
+            <a href="coach.html" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">教練介紹</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">聯絡我們</a>
+        </div>
+    </header>
+
+    <!-- 教練團介紹區塊 (加上 id="coach" 讓導覽列可以正確跳轉) -->
+    <section id="coach" class="relative py-20 px-4 mx-auto bg-brighton-navy pt-32">
+        
+        <!-- 背景微光特效 -->
+        <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+            <div class="w-[500px] h-[300px] bg-sky-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <!-- 區塊標題 -->
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold tracking-[0.2em] text-sky-400 uppercase block mb-1">Tactical Masterminds</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brighton-yellow via-white to-sky-300">
+                教練團隊
+            </h2>
+            <p class="text-slate-400 text-sm mt-2">PALADIN FC | 聖騎士足球俱樂部</p>
+        </div>
+
+        <!-- 劉教練卡片容器 -->
+        <div class="bg-slate-900/40 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 max-w-6xl mx-auto mb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- 左半部：教練個人資訊與經歷 -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div class="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
+                        <div class="relative w-32 h-32 md:w-36 md:h-36 shrink-0 rounded-2xl overflow-hidden border-2 border-amber-400/40 bg-slate-800 flex items-center justify-center">
+                            <img src="adam coach profile picture.jpg" alt="小祥教練" class="w-full h-full object-cover">
+                            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[9px] font-bold bg-amber-500 text-black rounded uppercase">HEAD COACH</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-2">
+                                <h3 class="text-2xl font-black text-white">小祥教練</h3>
+                                <span class="px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30">COACH ADAM</span>
+                            </div>
+                            <p class="text-xs text-sky-400 font-medium mb-3">教練簡介</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                coach Adam ｜小祥教練｜足球體能教練
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="border-white/10">
+
+                    <div>
+                        <h4 class="text-amber-400 font-bold text-sm mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase text-xs"></i> 教學經歷
+                        </h4>
+                        <ul class="space-y-2 text-slate-300 text-xs md:text-sm">
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-1">▸</span><span><strong>7 年足球教學經驗</strong>：涵蓋幼兒園、俱樂部、學校社團與校隊，以及私人課程。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-1">▸</span><span><strong>助理教練</strong>：高雄美國學校（男子、女子足球隊）、樹德科技大學。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-1">▸</span><span><strong>社團指導老師</strong>：新莊、正興、莊敬、新上等學校。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-1">▸</span><span><strong>多齡層指導</strong>：曾帶領幼兒園、國小、青少年及成人足球課程。</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sky-400 font-bold text-sm mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i> 學歷與專業資格
+                        </h4>
+                        <p class="text-xs md:text-sm text-slate-300 mb-3">🎓 <strong>樹德科技大學</strong> 休閒與運動管理系</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/30 rounded-md">國家 C 級足球教練證</span>
+                            <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/30 rounded-md">國家 B 級足球裁判證</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 border border-white/10 rounded-md">幼兒體適能指導員</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 border border-white/10 rounded-md">C 級健身指導員</span>
+                            <span class="px-2.5 py-1 bg-red-500/10 text-red-300 border border-red-500/30 rounded-md">EMT-1 初級救護技術員</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 border border-white/10 rounded-md">功能性訓練相關證照</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右半部：照片區 -->
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-800 border border-white/10 shadow-lg">
+                        <img src="coach coaching(1).jpg" alt="執教側拍" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-800 border border-white/10 shadow-lg">
+                        <img src="coach coaching(2).jpg" alt="戰術佈局" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- 徐教練卡片容器 -->
+        <div class="bg-slate-900/40 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div class="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
+                        <div class="relative w-32 h-32 md:w-36 md:h-36 shrink-0 rounded-2xl overflow-hidden border-2 border-amber-400/40 bg-slate-800 flex items-center justify-center">
+                            <img src="hsu coach profile picture.jpg" alt="徐教練" class="w-full h-full object-cover">
+                            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[9px] font-bold bg-amber-500 text-black rounded uppercase">ASSIST COACH</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-2">
+                                <h3 class="text-2xl font-black text-white">徐教練</h3>
+                                <span class="px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30">COACH HSU</span>
+                            </div>
+                            <p class="text-xs text-sky-400 font-medium mb-3">教練簡介</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">coach Hsu ｜徐教練｜足球教練</p>
+                        </div>
+                    </div>
+
+                    <hr class="border-white/10">
+
+                    <div>
+                        <h4 class="text-amber-400 font-bold text-sm mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase text-xs"></i> 教學經歷
+                        </h4>
+                        <ul class="space-y-2 text-slate-300 text-xs md:text-sm">
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-1">▸</span><span><strong>聖騎士足球俱樂部教練</strong>。</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sky-400 font-bold text-sm mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i> 學歷與專業資格
+                        </h4>
+                        <p class="text-xs md:text-sm text-slate-300 mb-3">🎓 <strong>樹德科技大學</strong> 休閒與運動管理系</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/30 rounded-md">國家 C 級足球教練證</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-800 border border-white/10 shadow-lg">
+                        <img src="hsu coach coaching(1).jpg" alt="執教側拍" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-800 border border-white/10 shadow-lg">
+                        <img src="hsu coach coaching(2).jpg" alt="戰術佈局" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: Contact & Newsletter -->
+    <section id="contact" class="py-20 bg-white dark:bg-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-3">
+                    <h2 class="text-3xl font-extrabold text-brighton-blue dark:text-sky-400">追蹤官方社群媒體</h2>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        第一時間獲取聖騎士足球俱樂部最新動態、特惠資訊。
+                    </p>
+                    <div class="pt-6 border-t border-gray-200 dark:border-slate-700">
+                        <h4 class="font-bold text-sm mb-4 text-gray-700 dark:text-gray-300">關注聖騎士官方社群媒體</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/profile.php?id=61579818606174&sk=reels_tab" class="w-10 h-10 rounded-full bg-brighton-blue/10 dark:bg-slate-700 text-brighton-blue dark:text-sky-400 flex items-center justify-center hover:bg-brighton-blue hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/paladin.fc_01/" class="w-10 h-10 rounded-full bg-brighton-blue/10 dark:bg-slate-700 text-brighton-blue dark:text-sky-400 flex items-center justify-center hover:bg-brighton-blue hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brighton-blue/10 dark:bg-slate-700 text-brighton-blue dark:text-sky-400 flex items-center justify-center hover:bg-brighton-blue hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Footer (單一乾淨版) -->
+    <footer class="bg-brighton-navy text-white pt-12 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8 text-sm">
+                
+                <!-- 左側：球隊介紹 -->
+                <div class="space-y-3 max-w-sm">
+                    <div class="font-bold text-lg text-brighton-yellow">聖騎士足球俱樂部</div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Paladin FC 官方繁體中文示範網站。致力於提供亞洲球迷優質的球隊資訊展示。
+                    </p>
+                </div>    
+
+                <!-- 右側：贊助商 Logo 圖片 -->
+                <div class="space-y-2">
+                    <div class="text-xs font-semibold text-gray-400 tracking-wider uppercase">官方贊助商</div>
+                    <div class="flex items-center gap-6 flex-wrap">
+                        <img src="sponser 1.png" alt="Sponsor 1" class="h-8 object-contain">
+                        <img src="你的_logo路徑2.png" alt="Sponsor 2" class="h-8 object-contain">
+                        <img src="你的_logo路徑3.png" alt="Sponsor 3" class="h-8 object-contain">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 下方版權聲明 -->
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gray-500">
+                &copy; 2026 Paladin Football Club. 版權所有。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
