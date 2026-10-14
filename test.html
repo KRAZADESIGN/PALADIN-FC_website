@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖騎士足球俱樂部官方網站 | PALADIN FC</title>
+    <!-- 🌟 設定瀏覽器分頁標誌 (Favicon) 🌟 -->
+    <link rel="icon" type="image/png" href="paladin logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brighton: {
+                            blue: '#0057B8',
+                            darkblue: '#003B7A',
+                            navy: '#0A192F',
+                            yellow: '#FFC72C',
+                            gold: '#E0A800',
+                            light: '#F4F7FA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 87, 184, 0.5);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 87, 184, 0.9) 0%, rgba(10, 25, 47, 0.95) 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brighton-yellow/95 dark:bg-brighton-navy/95 backdrop-blur-md text-white shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Brand Name -->
+<div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    
+    <!-- 1. 新增：最左邊的隊徽圖片容器 -->
+    <div class="  w-12 h-12 rounded-full  dark:bg-brighton-navy/95  flex items-center justify-center ">
+        <img src="paladin logo.png" alt="聖騎士足球俱樂部隊徽" class="w-full h-full object-contain">
+    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-wider block leading-tight">聖騎士足球俱樂部</span>
+                        <span class="text-xs font-medium uppercase tracking-widest">PALADIN FC</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="#overview" class="hover:text-brighton-blue transition-colors py-2">俱樂部簡介</a>
+                    <a href="record.html" class="hover:text-brighton-blue transition-colors py-2">參賽記錄</a>
+                    <a href="academy.html" class="hover:text-brighton-blue transition-colors py-2">班級介紹</a>
+                    <a href="coach.html" class="hover:text-brighton-blue transition-colors py-2">教練介紹</a> 
+                    <a href="#contact" class="hover:text-brighton-blue transition-colors py-2">聯絡我們</a>
+                </nav>
+
+                <!-- Tools (Theme Toggle, Language, Mobile Menu Button) -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark/Light Theme Switcher -->
+    
+
+                    <!-- Ticket Button -->
+                    <a href="#matches" class="hidden sm:inline-flex items-center px-4 py-2 bg-brighton-yellow text-brighton-navy hover:bg-yellow-400 font-bold text-sm rounded-full shadow-md transition-all transform hover:scale-105">
+                        <i class="fas fa-ticket-alt mr-2"></i>賽程
+                    </a>
+
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md hover:bg-white/10 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brighton-yellow dark:bg-slate-900 border-t border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#overview" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">俱樂部簡介</a>
+            <a href="record.html" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">參賽紀錄</a>
+            <a href="academy.html" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">班級介紹</a>
+            <a href="#coach" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">教練介紹</a>
+            <a href="#stadium" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">球場與球迷</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md hover:bg-white/10 text-base font-medium">聯絡我們</a>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden bg-brighton-navy text-white">
+        <!-- 本機背景圖片 -->
+    <img src="background.jpg.jpg" 
+         alt="主場背景" 
+         class="absolute inset-0 w-full h-full object-cover object-center">>
+         <!-- 半透明黑罩（防止背景圖太亮導致文字看不清） -->
+    <div class="absolute inset-0 bg-black/40"></div>
+        <!-- Background Simulated Graphic/Visuals -->
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-r from-brighton-blue to-brighton-navy"></div>
+            <div class="w-full h-full bg-[radial-gradient(#0057B8_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        </div>
+        
+      <div class="relative min-h-screen py-20"> <!-- 設定最小高度或上下 padding -->
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+                聖騎士足球俱樂部 <br class="sm:hidden" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brighton-yellow via-white to-sky-300">PALADIN FC</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                歡迎來到聖騎士足球俱樂部（PALADIN FC）官方中文網站。
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#matches" class="w-full sm:w-auto px-8 py-4 bg-brighton-yellow text-brighton-navy hover:bg-yellow-400 font-extrabold text-lg rounded-full shadow-lg hover:shadow-yellow-500/20 transition-all transform hover:-translate-y-1">
+                    <i class="fas fa-calendar-alt mr-2"></i>最新賽程
+                </a>
+                <a href="#overview" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-lg rounded-full shadow-lg transition-all transform hover:-translate-y-1">
+                    <i class="fas fa-arrow-down mr-2"></i>了解俱樂部
+                </a>
+            </div>
+
+            <!-- Quick Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-white/10">
+                <div class="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                    <div class="text-3xl font-black text-brighton-yellow">2025</div>
+                    <div class="text-xs text-gray-300 uppercase tracking-wider mt-1">創立年份</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                    <div class="text-3xl font-black text-brighton-yellow">250+</div>
+                    <div class="text-xs text-gray-300 uppercase tracking-wider mt-1">IG 追蹤人數</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                    <div class="text-3xl font-black text-brighton-yellow">台南夢達聯賽L3</div>
+                    <div class="text-xs text-gray-300 uppercase tracking-wider mt-1">所屬聯賽</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                    <div class="text-3xl font-black text-brighton-yellow">聖騎士</div>
+                    <div class="text-xs text-gray-300 uppercase tracking-wider mt-1">隊伍暱稱</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+     <!-- 參賽戰績與歷程區塊 (Tournament History Section) -->
+<section id="tournaments" class="relative py-20 w-full overflow-hidden ">
+  <!-- 本機背景圖片 -->
+    <img src="background 3.png" 
+         alt="主場背景" 
+         class="absolute inset-0 w-full h-full object-cover object-center -z-30">
+         <!-- 半透明黑罩（防止背景圖太亮導致文字看不清） -->
+    <div class="absolute inset-0 bg-brighton-navy/65 -z-20"></div>
+        <!-- Background Simulated Graphic/Visuals -->
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-r from-brighton-blue to-brighton-navy"></div>
+            <div class="w-full h-full bg-[radial-gradient(#0057B8_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        </div>
+  <!-- 背景雙色氛圍微光 -->
+  <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+    <div class="w-[500px] h-[300px] bg-sky-500/10 blur-[130px] rounded-full transform -translate-x-1/2"></div>
+    <div class="w-[400px] h-[250px] bg-amber-500/10 blur-[120px] rounded-full transform translate-x-1/2"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- 區塊標題與統計指標 -->
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold tracking-[0.2em] text-brighton-yellow uppercase block mb-2">Honors & History</span>
+      <h2 class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brighton-yellow via-white to-sky-300 mb-6">
+        聖騎士征戰紀錄
+      </h2>
+      
+      
+
+    <!-- 參賽紀錄卡片列表 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      
+      </div>
+      <!-- 賽事卡片 1：橫向長條型 (Horizontal Banner) -->
+<div class="relative bg-slate-900/50 backdrop-blur-xl border border-amber-400/30 rounded-3xl p-6 shadow-xl hover:border-amber-400 transition-all duration-300 hover:-translate-y-0.5 group">
+  
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+    
+    <!-- 左側：徽章 + 賽事名稱 + 時間地點 -->
+    <div class="space-y-2 md:max-w-xs shrink-0">
+      <div class="flex items-center gap-3">
+        <span class="px-3 py-1 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold rounded-full inline-flex items-center gap-1.5">
+          <i class="fas fa-trophy text-amber-400"></i>
+          <span>第7名</span>
+        </span>
+        <span class="text-xs text-slate-400 font-mono">2026.06</span>
+      </div>
+
+      <h3 class="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+        高雄市社區足球聯誼賽賽
+      </h3>
+      <p class="text-xs text-slate-400 flex items-center gap-1">
+        <i class="fas fa-map-marker-alt text-amber-400/80"></i>
+        <span>高雄鳳山體育場</span>
+      </p>
+    </div>
+
+    
+
+</div>
+      </div>
+
+      
+
+  </div>
+</section>
+
+    <!-- Section 3: Club Overview -->
+    <section id="overview" class="py-20 bg-brighton-navy dark:bg-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brighton-yellow dark:text-sky-400 mb-3">俱樂部簡介</h2>
+                <div class="w-20 h-1.5 bg-brighton-yellow mx-auto mb-4 rounded-full"></div>
+                <p class="text-gray-600 dark:text-gray-300">Paladin FC | 聖騎士足球俱樂部｜騎士學院</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info Text -->
+                <div class="space-y-6">
+                    <div class="bg-brighton-light dark:bg-slate-700/50 p-6 rounded-2xl border-l-4 border-brighton-yellow">
+                        <h3 class="text-xl font-bold mb-2 text-brighton-navy dark:text-white">核心理念：快樂踢球 ‧ 扎實技術 ‧ 團隊共榮</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            俱樂部成立於 2025 年，為 聖騎士足球俱樂部專為青少年與足球愛好者打造的系統化培訓基地。我們致力於推廣足球運動，將一隊於業餘賽事積累的實戰經驗與熱情向下紮根，為不同年齡層與技術階段的學員提供專業、安全且充滿樂趣的訓練環境。
+                        </p>
+                    </div>
+
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        在 PALADIN FC，我們以「高頻扎實訓練、定期實戰檢驗、團隊共榮」為核心理念。為了確保訓練品質與身體記憶的延續，我們提供每週至少兩次的高質量系統化課程，扎實打磨學員的個人基本功與戰術觀念。我們同時貫徹「以賽促練」的精神，搭配定期舉辦的友誼賽與交流賽，讓學員在真實比賽的張力下學習閱讀比賽與團隊配合。透過每週至少兩次的密集訓練與定期賽事檢驗，我們不僅培養出技術扎實的球員，更重視學員在過程中養成的自律態度與抗壓能力，讓他們在享受足球熱情的同時收穫終身受用的品格。
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+    
+    <!-- 1. 主場球衣按鈕 -->
+    <div class="group p-4 border border-gray-100 dark:border-slate-700 rounded-xl bg-gray-50 dark:bg-slate-900/50 flex items-center justify-between transition-all duration-300 hover:border-sky-400 hover:shadow-[0_0_20px_rgba(56,189,248,0.45)] cursor-pointer">
+        
+        <!-- 左側：原本的文字內容 -->
+        <div>
+            <i class="fas fa-shield-alt text-2xl text-brighton-darkblue mb-2"></i>
+            <h4 class="font-bold text-base mb-1">主場球衣</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">2026/27賽季 深藍主場</p>
+        </div>
+
+        <!-- 右側：按鈕內部右邊的小球衣圖 -->
+        <div class="w-24 h-24 shrink-0 flex items-center justify-center p-1 rounded-lg">
+            <img src="jeresy home.png" alt="主場球衣" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+    </div>
+
+    <!-- 2. 客場球衣按鈕 -->
+    <div class="group p-4 border border-gray-100 dark:border-slate-700 rounded-xl bg-gray-50 dark:bg-slate-900/50 flex items-center justify-between transition-all duration-300 hover:border-[#FF66CC] hover:shadow-[0_0_20px_rgba(255,102,204,0.45)] cursor-pointer">
+        
+        <!-- 左側：原本的文字內容 -->
+        <div>
+            <i class="fas fa-futbol text-2xl text-[#FF66CC] mb-2"></i>
+            <h4 class="font-bold text-base mb-1">客場球衣</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">2026/27賽季 粉紅客場</p>
+        </div>
+
+        <!-- 右側：按鈕內部右邊的小球衣圖 -->
+        <div class="w-24 h-24 shrink-0 flex items-center justify-center p-1 rounded-lg">
+            <img src="jeresy away.png" alt="客場球衣" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+    </div>
+
+</div>
+                </div>
+
+                <!-- Graphical Showcase Card -->
+<div class="relative">
+    <div class="absolute -inset-2 bg-gradient-to-r from-brighton-blue to-brighton-yellow opacity-30 blur-xl rounded-3xl"></div>
+    <div class="relative bg-brighton-navy rounded-3xl p-8 text-white shadow-2xl border border-white/10">
+        
+        <!-- 卡片頂部：隊徽 + 標題區塊 -->
+        <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+            <!-- 隊徽與標題組合 -->
+            <div class="flex items-center gap-3.5">
+                <!-- 隊徽圖片容器 -->
+                <div class="w-12 h-12 shrink-0 flex items-center justify-center">
+                    <img src="paladin logo.png" alt="聖騎士 FC 隊徽" class="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-brighton-yellow">俱樂部核心資訊</h4>
+                    <span class="text-xs text-gray-400 block tracking-wider">Club Snapshot</span>
+                </div>
+            </div>
+
+            <!-- 右側聯賽標籤 -->
+            <span class="px-3 py-1 bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs rounded-full font-bold shrink-0">
+                夢達聯賽
+            </span>
+        </div>
+        
+        <!-- 資訊列表 -->
+        <ul class="space-y-4 text-sm">
+            <li class="flex justify-between items-center border-b border-white/5 pb-2.5">
+                <span class="text-gray-400">官方全名</span>
+                <span class="font-semibold text-white">高雄聖騎士足球俱樂部 | PALADIN FC</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-2.5">
+                <span class="text-gray-400">球隊所在地</span>
+                <span class="font-semibold text-brighton-yellow">高雄市|左營區.新興區</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-2.5">
+                <span class="text-gray-400">年齡分部</span>
+                <span class="font-semibold text-white">成人部門 | 國中部 | 國小部</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-white/5 pb-2.5">
+                <span class="text-gray-400">代表顏色</span>
+                <span class="font-semibold flex items-center gap-2">
+                    <span class="flex items-center gap-1">
+                        <span class="w-3 h-3 rounded-full bg-brighton-darkblue border border-sky-400 inline-block"></span> 主場
+                    </span>
+                    <span class="text-gray-500">/</span>
+                    <span class="flex items-center gap-1">
+                        <span class="w-3 h-3 rounded-full bg-[#FF66CC] inline-block"></span> 客場
+                    </span>
+                </span>
+            </li>
+            <li class="flex justify-between items-center">
+                <span class="text-gray-400">2026/27 賽季</span>
+                <span class="font-semibold text-sky-300">夢達聯賽 D. LEAGUE L3</span>
+            </li>
+        </ul>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>              
+          
+   
+   
+
+<!-- 聯絡球隊區塊 (Get In Touch Section) -->
+<section id="contact" class="relative pb-20 pt-20 w-full">
+    <!-- 本機背景圖片 -->
+    <img src="background 2.jpg" 
+         alt="主場背景" 
+         class="absolute inset-0 w-full h-full object-cover object-center -z-30">
+         <!-- 半透明黑罩（防止背景圖太亮導致文字看不清） -->
+    <div class="absolute inset-0 bg-black/65 -z-20"></div>
+        <!-- Background Simulated Graphic/Visuals -->
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-r from-brighton-blue to-brighton-navy"></div>
+            <div class="w-full h-full bg-[radial-gradient(#0057B8_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        </div>
+  <!-- 背景微光特效 -->
+  <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+    <div class="w-[500px] h-[300px] bg-sky-500/10 blur-[120px] rounded-full"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4">
+
+    <!-- 區塊標題（最上方加上隊徽 Logo） -->
+    <div class="text-center mb-3">
+      
+      <!-- 🌟 隊徽 Logo 預設容器 🌟 -->
+      <div class="w-16 h-16 md:w-20 md:h-20 mx-auto    p-2.5 shadow-lg  flex items-center justify-center relative ">
+        <!-- 替換 src 為你的隊徽圖片路徑（如：images/logo.png） -->
+        <img src="paladin logo.png" alt="Paladin FC Logo" class="w-full h-full object-contain drop-shadow" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xl font-black text-amber-300\'>PFC</span>';">
+      </div>
+
+      <span class="text-xs font-bold tracking-[0.2em] text-brighton-yellow uppercase block mb-5">Get In Touch</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold  text-brighton-yellow mb-30">
+        聯絡聖騎士足球俱樂部
+      </h2>
+      <p class="text-slate-400 text-sm mt-2 py-5">不論是友誼賽約戰、加盟諮詢或贊助合作，歡迎隨時寄信給我們！</p>
+    </div>
+
+    <!-- 寄信按鈕容器 (方案 B：開啟信箱軟體直寄) -->
+    <div class="bg-slate-900/40 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl text-center">
+      
+      <!-- 信封視覺圖示 -->
+      <div class="w-14 h-14 mx-auto mb-6 rounded-2xl bg-gradient-to-tr from-brighton-yellow/20 to-sky-400/20 border border-amber-400/30 flex items-center justify-center text-amber-300 text-xl shadow-lg">
+        <i class="fas fa-envelope-open-text"></i>
+      </div>
+
+      <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">
+        隨時與聖騎士足球俱樂部取得聯繫
+      </h3>
+      <p class="text-slate-400 text-sm max-w-lg mx-auto mb-8">
+        點擊下方按鈕，系統將自動為您開啟 Gmail 或預設郵件軟體，直接發送信件至球隊官方信箱！
+      </p>
+
+      <!-- 核心寄信按鈕 -->
+      <a href="mailto:dark98421@gmail.com?subject=【Paladin FC 官網諮詢】友誼賽邀約 / 訓練課程詢問" 
+         class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-brighton-yellow via-amber-400 to-amber-500 hover:from-amber-400 hover:to-brighton-yellow text-slate-950 font-black rounded-2xl transition-all duration-300 shadow-xl shadow-amber-500/20 hover:shadow-amber-500/35 hover:scale-105 active:scale-95 text-base cursor-pointer">
+        <i class="fas fa-paper-plane text-lg"></i>
+        <span>開啟信箱寄信給球隊</span>
+      </a> 
+      <!-- 備用方案：直接開網頁版 Gmail 寄信（解決電腦沒設定預設郵件軟體的問題） -->
+       <div class="flex flex-col items-center gap-3 mt-3"></div>
+     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dark98421@gmail.com&su=【Paladin FC 官網諮詢】友誼賽邀約 / 訓練課程詢問" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     class="text-xxs text-sky-400 hover:text-sky-300 underline underline-offset-4 transition-colors">
+    若點擊無反應，請點此開啟 Chrome 網頁版 Gmail 寄信
+     </a>
+
+      <!-- 備用文字顯示 -->
+      <p class="text-xs text-slate-500 mt-6">
+        官方信箱：<span class="text-slate-300 font-mono select-all">dark98421@gmail.com</span>
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+</section>
+
+    <!-- Section 9: Contact & Newsletter -->
+    <section id="contact" class="py-20 bg-white dark:bg-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Newsletter -->
+                <div class="space-y-3 ">
+                    <h2 class="text-3xl font-extrabold text-brighton-blue dark:text-sky-400">追蹤官方社群媒體</h2>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        第一時間獲取聖騎士足球俱樂部最新動態、特惠資訊。
+                    </p>
+
+                    <!-- Social Links -->
+                    <div class="pt-6 border-t border-gray-200 dark:border-slate-700">
+                        <h4 class="font-bold text-sm mb-4 text-gray-700 dark:text-gray-300">關注聖騎士官方社群媒體</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/profile.php?id=61579818606174&sk=reels_tab" class="w-10 h-10 rounded-full bg-brighton-blue/10 dark:bg-slate-700 text-brighton-blue dark:text-sky-400 flex items-center justify-center hover:bg-brighton-blue hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/paladin.fc_01/" class="w-10 h-10 rounded-full bg-brighton-blue/10 dark:bg-slate-700 text-brighton-blue dark:text-sky-400 flex items-center justify-center hover:bg-brighton-blue hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brighton-blue/10 dark:bg-slate-700 text-brighton-blue dark:text-sky-400 flex items-center justify-center hover:bg-brighton-blue hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Footer -->
+    <footer class="bg-brighton-navy text-white pt-12 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 左右兩側對齊 -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8 text-sm">
+                
+                <!-- 左側：球隊介紹 -->
+                <div class="space-y-3 max-w-sm">
+                    <div class="font-bold text-lg text-brighton-yellow">聖騎士足球俱樂部</div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Paladin FC 官方繁體中文示範網站。致力於提供亞洲球迷優質的球隊資訊展示。
+                    </p>
+                </div>    
+
+                <!-- 右側：單純的贊助商 Logo 圖片 -->
+                <div class="space-y-2">
+                    <div class="text-xs font-semibold text-gray-400 tracking-wider uppercase">官方贊助商</div>
+                    <div class="flex items-center gap-6 flex-wrap">
+                        <img src="sponser 1.png" alt="Sponsor 1" class="h-12 object-contain">
+                        <img src="水方建設_紅色橫式.png" alt="Sponsor 2" class="h-8 object-contain">
+                        <img src="萩沢圖檔.png" alt="Sponsor 3" class="h-8 object-contain">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 下方版權聲明 -->
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gray-500">
+                &copy; 2026 Paladin Football Club. 版權所有。
+            </div>
+        </div>
+    </footer>
+
+            
+    </footer>
+
+    <script>
+        // --- 2. Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Initial Load
+        window.onload = function() {
+            renderSquad('all');
+            loadQuiz();
+        };
+    </script>
+</body>
+</html>
